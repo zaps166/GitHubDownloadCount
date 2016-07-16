@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GitHub download count</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
+     <number>3</number>
+    </property>
+    <property name="spacing">
+     <number>3</number>
+    </property>
+    <item row="0" column="0">
+     <layout class="QFormLayout" name="formLayout">
+      <property name="horizontalSpacing">
+       <number>3</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>3</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>User name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="userName"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Repository name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="repoName"/>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTreeWidget" name="dwnInfo">
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+      <property name="uniformRowHeights">
+       <bool>true</bool>
+      </property>
+      <property name="animated">
+       <bool>true</bool>
+      </property>
+      <attribute name="headerMinimumSectionSize">
+       <number>100</number>
+      </attribute>
+      <attribute name="headerStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Download count</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>repoName</sender>
+   <signal>editingFinished()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getData()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>userName</sender>
+   <signal>editingFinished()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getData()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>userName</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>repoName</sender>
+   <signal>returnPressed()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>returnPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>434</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>getData()</slot>
+  <slot>returnPressed()</slot>
+ </slots>
+</ui>
