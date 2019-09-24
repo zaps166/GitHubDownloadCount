@@ -23,6 +23,7 @@
 #include <QJsonObject>
 #include <QMessageBox>
 #include <QJsonArray>
+#include <QAction>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
